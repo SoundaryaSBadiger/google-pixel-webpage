@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+  transition: all 0.2s;
+}
+
+.form-holder {
+  background-image: linear-gradient(to right, #4285F4, white, #4285F4);
+
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: lightgray;
+}
+
+form {
+  border-radius: 20px;
+  width: 500px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  background-color: white;
+}
+
+.form-items {
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  outline: none;
+  padding: 15px 20px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid grey;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+#gender {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+
+#gender div {
+  text-align: center;
+  width: 100%;
+  padding: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 20px 20px;
+  margin: 5px;
+  background-color: #4285F4;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+}
+
+label:hover {
+  color: #4285F4;
+}
+h2:hover {
+  color: #4285F4;
+}
+
+button a {
+  text-decoration: none;
+  color: white;
+}
