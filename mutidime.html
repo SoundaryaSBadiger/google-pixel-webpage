@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt Game</title>
+</head>
+<body>
+
+<h2>Treasure Hunt Game</h2>
+<p>Guess the row and column (0 - 4)</p>
+
+<button onclick="play()">Play</button>
+
+<p id="result"></p>
+
+<script>
+    function play() {
+
+        // Create a new 5x5 grid every trial
+        let grid = [
+            ["-", "-", "-", "-", "-"],
+            ["-", "-", "-", "-", "-"],
+            ["-", "-", "-", "-", "-"],
+            ["-", "-", "-", "-", "-"],
+            ["-", "-", "-", "-", "-"]
+        ];
+
+        // Treasure changes position EVERY TIME play() runs
+        let treasureRow = Math.floor(Math.random() * 5);
+        let treasureCol = Math.floor(Math.random() * 5);
+
+        // User input
+        let guessRow = parseInt(prompt("Enter row (0 to 4):"));
+        let guessCol = parseInt(prompt("Enter column (0 to 4):"));
+
+        let output = document.getElementById("result");
+
+        // Check guess
+        if (guessRow === treasureRow && guessCol === treasureCol) {
+            grid[guessRow][guessCol] = "💎";
+            output.innerHTML = "🎉 You found the treasure!<br><br>"
+                + JSON.stringify(grid);
+        } else {
+            grid[treasureRow][treasureCol] = "💎"; // reveal treasure
+            grid[guessRow][guessCol] = "❌";        // mark wrong
+            output.innerHTML = "❌ Wrong guess! Treasure moved.<br><br>"
+                + JSON.stringify(grid);
+        }
+
+        // Treasure moves again for next trial
+    }
+</script>
+
+</body>
+</html>
